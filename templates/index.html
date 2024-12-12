@@ -1,1 +1,350 @@
-<h1> this is the home page</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Price Pred</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f9fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .all {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ecf0f3;
+      border-radius: 20px;
+      box-shadow: 20px 20px 20px #cbced1, -14px -14px 20px white;
+      padding: 20px;
+      box-sizing: border-box;
+      height: 90%;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 80%;
+      max-width: 1200px;
+      gap: 20px;
+    }
+
+    .container, .image-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ecf0f3;
+      border-radius: 10px;
+      box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover, .image-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 20px 20px 30px #b0b3b5, -20px -20px 30px white;
+    }
+
+    .brand-title {
+      margin-bottom: 20px;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: #1DA1F2;
+      text-align: center;
+    }
+
+    .form-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label, input, select, button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 50px;
+      box-sizing: border-box;
+    }
+
+    input, select {
+      background: #ecf0f3;
+      box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+      font-size: 14px;
+    }
+
+    button {
+      grid-column: span 2;
+      color: white;
+      background: #1DA1F2;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 20px;
+      box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    }
+
+    button:hover {
+      box-shadow: none;
+    }
+
+    .image-container img {
+      width: 750px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+      transition: transform 1s ease;
+    }
+
+    .image-container.rotate img {
+      transform: rotateY(360deg);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #0e9aebf5;
+      display: none;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .container, .image-container {
+        max-width: 100%;
+        padding: 15px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-container img {
+        max-width: 100%;
+      }
+
+      .brand-title {
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container, .image-container {
+        padding: 10px;
+      }
+
+      .brand-title {
+        font-size: 1.3rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+
+      .result {
+        font-size: 1rem;
+      }
+    }
+
+
+        /* Mini Header Style */
+        .mini-header {
+      position: fixed;
+      top: 20px;
+      left: 40px;
+      display: flex;
+      gap: 15px;
+      z-index: 1000; /* Ensure it stays on top */
+    }
+
+    .mini-header a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #1DA1F2;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 20px;
+      background-color: #f0f4f8;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .mini-header a:hover {
+      background-color: #1DA1F2;
+      color: white;
+    }
+
+    /* Optional: Adjust for mobile devices */
+    @media (max-width: 480px) {
+      .mini-header {
+        gap: 10px;
+      }
+
+      .mini-header a {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="all">
+    <div class="main-container">
+      <!-- Form Container -->
+      <div class="container">
+        <div class="brand-title">Fill The Form To Find Diamond Price </div>
+        <form class="form-grid" id="diamondForm">
+          <div>
+            <label for="carat">Carat:</label>
+            <input type="number" step="0.01" id="carat" name="carat" placeholder="Enter carat value" required>
+
+            <label for="depth">Depth:</label>
+            <input type="number" step="0.01" id="depth" name="depth" placeholder="Enter depth value" required>
+
+            <label for="table">Table:</label>
+            <input type="number" step="0.01" id="table" name="table" placeholder="Enter table value" required>
+
+            <label for="x">X:</label>
+            <input type="number" step="0.01" id="x" name="x" placeholder="Enter x value" required>
+
+            <label for="y">Y:</label>
+            <input type="number" step="0.01" id="y" name="y" placeholder="Enter y value" required>
+          </div>
+          <div>
+            <label for="z">Z:</label>
+            <input type="number" step="0.01" id="z" name="z" placeholder="Enter z value" required>
+
+            <label for="cut">Cut:</label>
+            <select id="cut" name="cut">
+              <option value="Fair">Fair</option>
+              <option value="Good">Good</option>
+              <option value="Very Good">Very Good</option>
+              <option value="Ideal">Ideal</option>
+              <option value="Excellent">Excellent</option>
+            </select>
+
+            <label for="color">Color:</label>
+            <select id="color" name="color">
+              <option value="D">D</option>
+              <option value="E">E</option>
+              <option value="F">F</option>
+              <option value="G">G</option>
+              <option value="H">H</option>
+              <option value="I">I</option>
+              <option value="J">J</option>
+            </select>
+
+            <label for="clarity">Clarity:</label>
+            <select id="clarity" name="clarity">
+              <option value="I1">I1</option>
+              <option value="I2">I2</option>
+              <option value="SI1">SI1</option>
+              <option value="VS1">VS1</option>
+              <option value="IF">IF</option>
+            </select>
+          </div>
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+      <!-- Image Container -->
+      <div class="image-container" id="imageContainer">
+        <img src="../static/images/Anglo-DiamondAnatomy_03.jpg" alt="Diamond Image">
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- Mini Header -->
+   <div class="mini-header">
+    <a href="#home">Home</a>
+    <a href="https://github.com/subhash-kr0/Diamond-Price-Prediction" target="_blank">Git</a>
+    <a href="about">About</a>
+  </div>
+
+  </div>
+
+
+  <script>
+    document.getElementById("diamondForm").addEventListener("submit", function (event) {
+  event.preventDefault();
+
+  // Get form values
+  const formData = new FormData(event.target);
+
+  // Prepare data to send as JSON
+  const data = {
+    carat: formData.get("carat"),
+    depth: formData.get("depth"),
+    table: formData.get("table"),
+    x: formData.get("x"),
+    y: formData.get("y"),
+    z: formData.get("z"),
+    cut: formData.get("cut"),
+    color: formData.get("color"),
+    clarity: formData.get("clarity"),
+  };
+
+  // Send data to the server using Fetch API
+  fetch("/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      const imageContainer = document.getElementById("imageContainer");
+      const resultElement = document.getElementById("result");
+
+      // Show rotation effect
+      imageContainer.classList.add("rotate");
+
+      // Show result after rotation
+      setTimeout(() => {
+        resultElement.innerHTML = `
+          <p>Price: $${result.price}</p>
+          <p>Carat: ${data.carat}, Cut: ${data.cut}, Color: ${data.color}, Clarity: ${data.clarity}</p>
+        `;
+        resultElement.style.display = "block";
+        imageContainer.classList.remove("rotate");
+      }, 1000);
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+});
+
+  </script>
+</body>
+</html>

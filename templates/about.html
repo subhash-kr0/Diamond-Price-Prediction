@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Price Pred</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f7f9fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .all {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ecf0f3;
+      border-radius: 20px;
+      box-shadow: 20px 20px 20px #cbced1, -14px -14px 20px white;
+      padding: 20px;
+      box-sizing: border-box;
+      height: 90%;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      width: 80%;
+      max-width: 1200px;
+      gap: 20px;
+    }
+
+    .container, .image-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #ecf0f3;
+      border-radius: 10px;
+      box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+      padding: 20px;
+      box-sizing: border-box;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover, .image-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 20px 20px 30px #b0b3b5, -20px -20px 30px white;
+    }
+
+    .brand-title {
+      margin-bottom: 20px;
+      font-weight: 900;
+      font-size: 1.8rem;
+      color: #1DA1F2;
+      text-align: center;
+    }
+
+    .form-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    label, input, select, button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 50px;
+      box-sizing: border-box;
+    }
+
+    input, select {
+      background: #ecf0f3;
+      box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+      font-size: 14px;
+    }
+
+    button {
+      grid-column: span 2;
+      color: white;
+      background: #1DA1F2;
+      font-weight: 900;
+      cursor: pointer;
+      transition: 0.5s;
+      border-radius: 20px;
+      box-shadow: 5px 5px 5px #cbced1, -5px -5px 5px white;
+      width: 100px;
+
+
+    }
+
+    button:hover {
+      box-shadow: none;
+    }
+
+
+    @media (max-width: 768px) {
+      .main-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+      }
+
+      .container, .image-container {
+        max-width: 100%;
+        padding: 15px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .image-container img {
+        max-width: 100%;
+      }
+
+      .brand-title {
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container, .image-container {
+        padding: 10px;
+      }
+
+      .brand-title {
+        font-size: 1.3rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+        padding: 10px;
+      }
+
+      .result {
+        font-size: 1rem;
+      }
+    }
+
+
+        /* Mini Header Style */
+        .mini-header {
+      position: fixed;
+      top: 20px;
+      left: 40px;
+      display: flex;
+      gap: 15px;
+      z-index: 1000; /* Ensure it stays on top */
+    }
+
+    .mini-header a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #1DA1F2;
+      font-weight: bold;
+      padding: 8px 15px;
+      border-radius: 20px;
+      background-color: #f0f4f8;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .mini-header a:hover {
+      background-color: #1DA1F2;
+      color: white;
+    }
+
+    /* Optional: Adjust for mobile devices */
+    @media (max-width: 480px) {
+      .mini-header {
+        gap: 10px;
+      }
+
+      .mini-header a {
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="all">
+    <div class="main-container">
+
+      <div class="container">
+        <div class="brand-title">About ME </div>
+        <p>Hello, I'm <span class="highlight">Subhash Kumar</span>, a passionate software engineer with expertise in web development, machine learning, and cybersecurity. I am focused on creating innovative solutions and building impactful projects in the tech space.</p>
+        <p>I have a strong foundation in technologies like Python, Java, and web development, and I'm continuously exploring new tools and frameworks to enhance my skills. I love contributing to open-source projects and collaborating with others in the tech community.</p>
+         
+        <div>
+        <a href="https://instagram.com/subhash_k0" target="_blank"><button>instagram</button></a>
+        <a href="https://github.com/subhash-kr0" target="_blank"><button>Github</button></a>
+        <a href="https://Linkedin.com/in/subhash-kr0" target="_blank"><button>Linkedin</button></a>
+    </div>
+
+      </div>
+      <!-- Image Container -->
+      <div class="image-container" id="imageContainer">
+        <div class="brand-title">About This Project</div>
+
+      <p>Welcome to the Diamond Price Prediction application! This project leverages the power of Machine Learning (ML) to predict the price of diamonds based on their key characteristics. With this application, users can input attributes such as carat weight, cut, color, clarity, and dimensions to estimate the market value of a diamond.</p>
+    
+      <p><b>Key Features</b><br>1. Accurate Predictions:
+        Uses a trained ML model to provide reliable price predictions based on real-world data.<br>
+        2. User-Friendly Interface:
+        Simple and intuitive design to allow anyone to input diamond attributes and get instant results.<br>
+        3. Customizable & Open-Source:
+        The entire project is open-source and available on <a href="https://github.com/subhash-kr0/Diamond-Price-Prediction" target="_blank">GitHub</a>. Developers can explore, modify, and contribute to the codebase.</p>
+    </div>
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+  </div>
+
+
+   <!-- Mini Header -->
+   <div class="mini-header">
+    <a href="/">Home</a>
+    <a href="https://github.com" target="_blank">Git</a>
+    <a href="about.html">About</a>
+  </div>
+
+  </div>
+
+
+
+  </script>
+</body>
+</html>
