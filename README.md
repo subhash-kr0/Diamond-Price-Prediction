@@ -3,6 +3,10 @@
 This repository contains an **open-source application** for predicting the price of diamonds using **Machine Learning (ML)**. The project is designed for both practical applications and as a learning resource for data science and machine learning enthusiasts.
 
 ---
+![](./static/images/demo_pic.jpeg)
+![](./static/images/demo_pic2.jpeg)
+
+
 
 ## 🌟 Features
 
@@ -34,10 +38,10 @@ pip install -r requirements.txt
 Start the Flask server by running:
 
 ```bash
-python app.py
+python application.py
 ```
 
-The application will be available at `http://127.0.0.1:5000/` in your browser.
+The application will be available at `http://127.0.0.1:5000/`or localhost:5000 in your browser.
 
 ---
 
@@ -96,10 +100,10 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-## 🔗 Links
+<!-- ## 🔗 Links
 
 - **Live Demo**: [Add link here if hosted]
-- **GitHub Repository**: [GitHub Link](https://github.com/your-username/diamond-price-prediction)
+- **GitHub Repository**: [GitHub Link](https://github.com/your-username/diamond-price-prediction) -->
 
 ---
 
