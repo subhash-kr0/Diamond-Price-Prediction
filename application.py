@@ -28,7 +28,7 @@ def predict_datapoint():
         result = round(pred[0], 2)
         return jsonify({"price": result})  # Return JSON response
 
-@app.route("/about")
+@app.route("/about.html")
 def about():
     return render_template('about.html')
 
