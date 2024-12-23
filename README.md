@@ -21,7 +21,7 @@ This repository contains an **open-source application** for predicting the price
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/diamond-price-prediction.git
+git clone https://github.com/subhash-kr0/diamond-price-prediction.git
 cd diamond-price-prediction
 ```
 
