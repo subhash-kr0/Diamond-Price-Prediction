@@ -187,16 +187,69 @@
     }
 
     /* Optional: Adjust for mobile devices */
-    @media (max-width: 480px) {
+    /* @media (max-width: 480px) {
       .mini-header {
         gap: 10px;
       }
+
+    .container, .image-container {
+      padding: 10px;
+    }
 
       .mini-header a {
         font-size: 12px;
         padding: 6px 12px;
       }
-    }
+    } */
+
+
+
+    @media (max-width: 480px) {
+  .container, .image-container {
+    padding: 10px;
+    margin-bottom: 10px; /* Add space between sections */
+  }
+
+  .all {
+    padding: 10px;
+  }
+
+  .brand-title {
+    font-size: 1.3rem; /* Adjust title font size */
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-size: 0.9rem; /* Reduce font size for better readability */
+    line-height: 1.4; /* Improve text spacing */
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+    margin: 15px 0;
+    width: auto; /* Allow buttons to adjust width automatically */
+  }
+
+  .container div a button {
+    display: inline-block;
+    margin: 5px; /* Add spacing between buttons */
+  }
+
+  .mini-header {
+    gap: 10px;
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .mini-header a {
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+  }
+}
+
+
   </style>
 </head>
 <body>
@@ -205,8 +258,8 @@
 
       <div class="container">
         <div class="brand-title">About ME </div>
-        <p>Hello, I'm <span class="highlight">Subhash Kumar</span>, a passionate software engineer with expertise in web development, machine learning, and cybersecurity. I am focused on creating innovative solutions and building impactful projects in the tech space.</p>
-        <p>I have a strong foundation in technologies like Python, Java, and web development, and I'm continuously exploring new tools and frameworks to enhance my skills. I love contributing to open-source projects and collaborating with others in the tech community.</p>
+        <p>Hello, I'm <span class="highlight">Subhash Kumar</span>, a passionate software engineer with expertise in web development, machine learning, and cybersecurity. I am focused on creating innovative solutions and building impactful projects in the tech space.
+        I have a strong foundation in technologies like Python, Java, and web development, and I'm continuously exploring new tools and frameworks to enhance my skills. I love contributing to open-source projects and collaborating with others in the tech community.</p>
          
         <div>
         <a href="https://instagram.com/subhash_k0" target="_blank"><button>instagram</button></a>
